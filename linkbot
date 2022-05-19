@@ -1,0 +1,13 @@
+#include <linkbot.h>
+CLinkbotI robot1, robot2;
+
+double radius = 1.75;
+double trackwidth = 3.69;
+robot2.setSpeed(4, radius);
+robot1.setLEDColor("green");
+robot2.driveTime(5); 
+robot1.setLEDColor("red");
+robot2.delaySeconds(4);
+robot1.setLEDColor("green");
+robot2.driveTime(3);
+robot1.setLEDColor("red");
