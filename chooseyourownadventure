@@ -1,0 +1,164 @@
+#include <chplot.h>
+CPlot plot;
+
+string_t name1, name2, introChoice, middle1Choice, middle2Choice, middle3Choice, cheat;
+int num;
+
+num = randint(2, 6);
+
+// CHEAT SHEET
+printf("Would you like to see a summary of the choices you can pick beforehand? Yes or No \n");
+scanf("%s", &cheat);
+if(cheat == "Yes" || cheat == "yes" || cheat == "YES")
+    printf("You are stranded on an island. You try to find 3 ways that could possibly help you get off: A temple, A lost phone, or just looking around the island.\n\nIf you go to the temple, you can either: look inside, look outside or just completely avoid it. Looking inside the temple will lead you to finding a boat and escaping. Looking outside will lead you to finding the wrong path and getting stuck. Leaving the temple alone will cause you to get lost and eventually get stuck on the island.\n\nIf you try to find the phone, you'll end up with three items that look like phones but you can't tell. If you choose the first phone, it won't work and you'll have no way of contacting people. If you choose the second phone, you'll still have no way of getting off and if you choose the third phone, you'll end up making it out.\n\nIf you end up looking around the island, you'll find: a note in a bottle, a village and a temple. Looking at the note will end up finding a boat and escaping. If you go into the village, you'll figure out that they are quite aggressive people and don't speak the same language. After what sounded like arguing, they wouldn't let you go without winning. If you go into the temple, you'll find a map that leads you to a boat which let's you escape.\n\n");
+// INTRODUCTION
+void intro() {
+    printf("Please give a name: ");
+    scanf("%s", &name1);
+    printf("Please give another name: ");
+    scanf("%s", &name2);
+    printf("You and your friend are left on a stranded island. You're laying on the beach after waking up from being unconscious. Once you're fully conscious, you check on your friend to make sure they're okay too. Their okay and awake. Now that that's taken care of, we have to figure out what to do. You see a note left in a bottle to the right of you. You open the bottle to look at what the note says. It says 'Hi ", name1, " and ", name2, ". You guys have till sunset to figure out how to get out of here. If you can't, all access for you two to leave will be gone.' So basically, you'll be stuck here forever if you don't find a way out. You and ", name2, "  immediately try to come up with 3 ideas. From a distance, you can see a structure in the forest. You also remember that you had your phone on you so you can look for that. Or you and your friend can look around the island for the possibility of more people being stuck here too. Choose your options: \n1) Go to the structure \n2) Try looking for your phone \n3) Look around the island more \n");
+    scanf("%s", &introChoice);
+    while(introChoice != "1" && introChoice != "2" && introChoice != "3") {
+        printf("I'm sorry, that is not a choice. ");
+        printf("Choose the number for what we should do. Do I \n1) Go to the structure \n2) Try looking for your phone \n3) Look around the island more \n");
+        scanf("%s", &introChoice);
+
+    }
+}
+
+// MIDDLE1
+void middle1() {
+    printf("Alright " , name1, " and ", name2, ", you guys chose to go to the structure that's hidden in the forest. Let's go shall we? As you are walking, you decide to look around a little. The forest is full of green trees and lots of bushes and other plants. You also notice, ", num , " pigs running around. Oh, we made it! From the looks of it, it is quite old and has been here for a very long time. It's made up of stone but it's covered in moss now. What should we do now? We could: \n1) Look around the outside of it for any hidden secrets \n2) Look inside the building for anything to use \n3) Leave the area and look for something else \n");
+    scanf("%s", &middle1Choice);
+    while(middle1Choice != "1" && middle1Choice != "2" && middle1Choice != "3") {
+        printf("I'm sorry, that is not a choice.");
+        printf(" Choose the number for what we should do. \n1) Look around the outside of it \n2) Look inside the building for anything to use \n3) Leave the area and look for something else \n");
+        scanf("%s", &middle1Choice);
+
+    }
+}
+// MIDDLE2
+void middle2() {
+    printf("Okay, let's look around for ", name1, "'s phone. ", name2, ", you can go that way. I'll go this way and ", name1, " can look around in this area. After some searching we all came back to where we were and everyone did bring something with them. It seems like we all brought something that resembles a phone. It's hard to tell the difference when it's getting darker now. We don't have much time left so we have to hurry and pick one. Which one do you think we should try? \n1) ", name1, "'s item \n2) ", name2, "'s item \n3) My item\n");
+    scanf("%s", &middle2Choice);
+    while(middle2Choice != "1" && middle2Choice != "2" && middle2Choice != "3") {
+        printf("I'm sorry, that is not a choice. ");
+        printf("Choose the number for what we should do. Do I chose \n1) ",name1, "'s item \n2) ", name2, "'s item \n3) My item\n");
+        scanf("%s", &middle2Choice);
+    }
+}
+// MIDDLE3
+void middle3() {
+    printf("Okay, let's look around the island before sunset. We'll split up. ", name1, " and I will go into the forest. ", name2, " you can search the beach. ", name1, " let's go in and then we can split up from there. After searching the area for about an hour or two, you all met up once again on the beach. ", name2, " found and brought another note in a bottle. You found a small area that looked like a village since it looked like it had some huts around it and I found some sort of structure. Which one should we check out first? \n1) Look what ", name2, "'s note says \n2) Go visit the small village that ", name1, " found \n3) Go to the temple that I found\n");
+    scanf("%s", &middle3Choice);
+    while(middle3Choice != "1" && middle3Choice != "2" && middle3Choice != "3") {
+        printf("I'm sorry, that is not a choice. ");
+        printf("Choose the number for what we should do. Do I \n1) Look at ", name2, "'s note \n2) Go to the small village \n3) Go to the temple \n");
+        scanf("%s", &middle3Choice);
+    }
+}
+// ENDING1
+void end1() {
+    printf("Okay, let's look around the outside. Make sure to notify us if you find anything. After about 20 minutes of searching, you were starting to give up but then suddenly heard a noise. The ground beneath you was shaking. What is happening? ", name2, " pressed a button they found on the back of the temple. Behind the structure, a room was opening up. You went inside the new area and saw a piece of paper in the middle of the room. You quickly ran to it and read it. 'Wrong button :) You should get going quickly now.' What is that supposed to mean? Once again you heard a sound from above this time. You quickly finished reading before you checked out the noise, 'the real way out is back upstairs.' Oh crap. ", name2, " noticed that the opening to the inside of the structure was closing.\n", name1, ", we have to go now! \nYou ran back up as quickly as possible but it was no use. The door was already shut and now we had now way out of here...\n");
+}
+// ENDING2
+void end2() {
+    printf("Okay, let's go inside. It looks pretty much the same on the inside than the outside but let's look around some more. Oh! It looks like ", name2, " has found something! It looks to be just a piece of paper... It's a map! It seems to be a map of the island. Look there! It has a small 'x' on the other side of the island. If we can make it over there following this map, we might be able to find something useful. Come on ", name1, " and ", name2, ", let's go! We made it to the other side of the island after a long time and saw that there were two boats stuck in the sand. Let's get them out so we can get out of this place. Alright! Now we can sail out and try to find other signs of life! \nAfter a while of sailing, you eventually found a larger boat who took you in and took you and your friend back home.\n");
+}
+// ENDING3
+void end3() {
+    printf("Let's just ignore the building for now. Who knows? Maybe it has booby traps rigged everywhere. It would be safer to just look for something else. So let's just explore the island for now. There's plenty of time to spare..maybe. Anyways! Let's just go. Should we split up and see if we can find anything? ", name1, " can go to the right, ", name2, " can go to the left and I'll go down the center. After 20 minutes of exploring, you got lost. You tried shouting out loud to get someone's attention but nothing worked. The sun was about to set, so that means you're almost out of time. You tried shouting again and this time you heard a response. ", name2, " came running to you but it was too late. Everyone took too much time and the sun was already setting. It was game over. \n");
+}
+// ENDING4
+void end4() {
+    printf("Okay, we'll go with ", name1, "'s item right now. Look for the button to turn it on first. We don't have a lot of time now! We have to hurry, did you find it yet? There's no button... Oh no..The sun's already down too. We could try to use ", name2, "'s phone quickly. Okay so...Where did they go? Quick we have to find them-\n It's too late at this point, the deadline has passed (the sun has set) so there is no point in continuing to try. It looks like we are going to be stuck here...forever now.\n");
+}
+// ENDING5
+void end5() {
+    printf("Okay, let's test ", name2, "'s item quickly. Look for a button then turn it on so we can call someone. ", name2, "'s item seemed to have a button so they tried to turn it on. It didn't work. They tried again but still nothing. Is it dead? It would make sense because it's been washed up from the shore but we need it to work right now.\n", name1, ", you try it out. Nothing was working, the phone was dead, we couldn't find a way out of here..Everyone went to sleep because they knew they had no chance of escaping now. When ", name2, " woke up, they noticed that the 'phone' they were trying to use wasn't a phone. It was a long rock with a barnacle on it.\n");
+}
+// ENDING6
+void end6() {
+    printf("Let's try my thing! I'm confident that this is a phone. Look, I can even feel the button on it! Or...maybe not? There's no button here. Whoops... \nAt this point you and your friend were quite mad because of me. A few minutes passed, still before sunset however, and we all accepted our fate. Then out of nowhere-\n ", name1, ", ", name2, " I'M KIDDING, I HAVE A PHONE! I just wanted to prank you all. \nYou and ", name2, " were really mad now but put it aside because now, you have a way out. You called 911 and told them you were stranded on an island. Even though you didn't give any details, for some reason, they already knew where you were and where to pick you up. A few hours later, a helicopter came flying by to pick all of you up and went home.\n");
+}
+// ENDING7
+void end7() {
+    printf("Alright, let's check what ", name2, "'s note says. It says:\n 'This note isn't that useful or is it? There could be something better than this. If you end up not finding anything else though, you can continue reading. This island is full of secrets. There's many things hidden here but you don't have the time to look and explore all of them. You could've found a lot more interesting things than this though. However, this note could be your last hope and if it is I have one more thing to say to you. Go straight through the forest, don't stop no matter what.' \n Okay ",name1, " and ", name2, " let's go then! You and the others made your way to the front of the forest and began to walk through it. You ended up at the other side of the island where you noticed two boats laying in the sand. You and the others got on and began to sail out. It was only a half an hour later when a larger boat came and took you in. You and ", name2, " finally made it back safely.\n");
+}
+// ENDING8
+void end8() {
+    printf("Let's go to the village right now. Lead the way, ", name1, ". You began the trip to find the village again. After traveling for some time, you end up back at the village where ", num, " huts were scattered around. \nYou and ", name2, " should try to look for some people if they are here, I'll go explore because this is so cool! \n You started to walk towards a hut and right before you could open it up, someone came out of it. So you started to say something but was immediately cut off by the other person. You could not understand a single thing that they were saying though. It was a completely different language that you've never heard before. ", name2, " came up beside you to try and figure out the language but it was no help. The person kept talking but we could not respond. It sounded like they were getting angry too. \n", name1,", ", name2, " it's almost sunset, we need to go. \nYou both tried to leave but other people began to emerge from their huts because of the noise. It seemed like the one you were talking to told them about you and the others, they were all starting to get mad, probably because we weren't responding to them. They wouldn't let you leave so eventually you had to stay there with them for the time being. By the time they let you go, it was already sunset.\n");
+}
+// ENDING9
+void end9() {
+    printf("Let's go to the temple, I have high hopes for it. Come on ", name1, " and ", name2, " follow me. \nYou all made your way to the temple in hopes of finding something useful and fast. \nWe should go inside first, shall we? \nEveryone went inside and started to look around for anything. ", name1, ", I see something to the right of you, turn around. \nYou turned around to look for whatever they were talking about and ended up finding a paper in a bottle. ", name2, " took it from your hands to check what's inside. It's a map! Everyone gathered around to look at what the map shows and you saw a small 'x' that was on the other side of the island. You all started to run straight to the 'x', when you got there, you saw 2 boats stuck in the sand. You took one of the boats and put it in the water. You got in and began to sail out, after only around 20 minutes of sailing, a larger boat came in to pick you guys up. You got on and were taken back home safely.\n");
+}
+void rectangle() {
+    plot.strokeColor("black");
+    plot.rectangle(5, 10, 5, 10);
+    plot.point(6, 17);
+    plot.point(9, 17);
+    plot.pointStyle("o");
+    plot.line(6, 14, 9, 14);
+    plot.line(6, 15, 6, 14);
+    plot.line(9, 15, 9, 14);
+    plot.plotting();
+}
+int main() {
+    intro();
+    if(introChoice == "1"){
+        middle1();
+        if(middle1Choice == "1"){
+            end1();
+            delaySeconds(4);
+            rectangle();
+        }
+        if(middle1Choice == "2"){
+            end2();
+            delaySeconds(4);
+            rectangle();
+        }
+        if(middle1Choice == "3"){
+            end3();
+            delaySeconds(4);
+            rectangle();
+        }
+    }
+    if(introChoice == "2"){
+        middle2();
+        if(middle2Choice == "1"){
+            end4();
+            delaySeconds(4);
+            rectangle();
+        }
+        if(middle2Choice == "2"){
+            end5();
+            delaySeconds(4);
+            rectangle();
+        }
+        if(middle2Choice == "3"){
+            end6();
+            delaySeconds(4);
+            rectangle();
+        }
+    }
+    if(introChoice == "3"){
+        middle3();
+        if(middle3Choice == "1"){
+            end7();
+            delaySeconds(4);
+            rectangle();
+        }
+        if(middle3Choice == "2"){
+            end8();
+            delaySeconds(4);
+            rectangle();
+        }
+        if(middle3Choice == "3"){
+            end9();
+            delaySeconds(4);
+            rectangle();
+        }
+    }
+}
